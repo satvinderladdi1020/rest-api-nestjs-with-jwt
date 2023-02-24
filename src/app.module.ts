@@ -5,6 +5,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { User } from './user/entities/user.entity';
 import { UserModule } from './user/user.module';
+import { PostsModule } from './posts/posts.module';
+import { MessagesModule } from './messages/messages.module';
+import { NotificationsModule } from './notifications/notifications.module';
+import { UsersModule } from './users/users.module';
+import { ChatsModule } from './chats/chats.module';
 
 @Module({
   imports: [
@@ -22,7 +27,12 @@ import { UserModule } from './user/user.module';
       entities: [User],
       synchronize: true,
     }),
-    UserModule
+    UserModule,
+    PostsModule,
+    MessagesModule,
+    NotificationsModule,
+    UsersModule,
+    ChatsModule
   ],
   exports: [TypeOrmModule],
   controllers: [AppController],
